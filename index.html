@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Fluid Player</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #video-id {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+<video id="video-id">
+    <source src="https://archive.org/download/19rene/19rene.mp4" type="video/mp4" />
+</video>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = fluidPlayer('video-id', {
+            vastOptions: {
+                adList: []
+            },
+            layoutControls: {
+                primaryColor: "#000000",
+                posterImage: "",
+                allowDownload: false,
+                allowTheatre: true,
+                playbackRateEnabled: true,
+                mute: false,
+                autoPlay: false,
+                playButtonShowing: true
+            }
+        });
+
+        video.on('play', function () {
+            window.location.href = 'http://p.rapolok.com/go/472113/710428';
+        });
+    });
+</script>
+
+</body>
+</html>
